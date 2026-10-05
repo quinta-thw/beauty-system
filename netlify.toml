@@ -1,0 +1,12 @@
+[build]
+  base = "frontend"
+  command = "npx expo export -p web"
+  publish = "dist"
+
+[build.environment]
+  EXPO_PUBLIC_API_URL = "https://beauty-system-backend.onrender.com/api"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
