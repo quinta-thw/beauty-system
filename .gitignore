@@ -8,3 +8,6 @@ dist/
 build/
 staticfiles/
 .DS_Store
+
+# Local Netlify folder
+.netlify
