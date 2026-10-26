@@ -6,4 +6,8 @@ __pycache__/
 .env.*
 dist/
 build/
+staticfiles/
 .DS_Store
+
+# Local Netlify folder
+.netlify

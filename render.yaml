@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: beauty-system-backend
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
+    startCommand: "gunicorn config.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.3"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "0"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://beauty-system-backend.onrender.com"
+      - key: CORS_ORIGINS
+        value: ""
+      - key: SALON_WHATSAPP
+        value: "254700000000"
+      - key: MPESA_ENV
+        value: "sandbox"
